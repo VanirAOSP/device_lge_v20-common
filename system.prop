@@ -10,7 +10,7 @@ persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 tunnel.audio.encode=false
 media.aac_51_output_enabled=true
-audio.offload.buffer.size.kb=32
+audio.offload.buffer.size.kb=64
 audio.offload.video=true
 audio.offload.pcm.16bit.enable=false
 audio.offload.pcm.24bit.enable=true
@@ -28,16 +28,16 @@ audio.offload.multiple.enabled=true
 audio.offload.min.duration.secs=30
 af.fast_track_multiplier=1
 audio_hal.period_size=160
-qcom.hw.aac.encoder=true
+#qcom.hw.aac.encoder=true
 
 # Bluetooth
 ro.bt.bdaddr_path="/data/misc/bdaddr"
 
 # Camera
-camera2.portability.force_api=2
-persist.camera.global.debug=1
-persist.camera.sensor.debug=1
 ro.camera.notify_nfc=1
+vidc.debug.perf.mode=2
+vidc.enc.dcvs.extra-buff-count=2
+media.camera.ts.monotonic=0
 # Enable camera EIS
 # eis.enable: enables electronic image stabilization
 # is_type: sets image stabilization type
@@ -55,23 +55,26 @@ ro.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
 persist.data.mode=concurrent
 
+# dalvik
+dalvik.vm.heapsize=60m
+
 # Display
 ro.qualcomm.cabl=0
 ro.sf.lcd_density=640
+ro.config.size_override=1440,2560
 
 # Factory Reset Protection (FRP)
 ro.frp.pst=/dev/block/bootdevice/by-name/persistent
 
 # Fluence
-ro.config.size_override=1440,2560
 ro.qc.sdk.audio.fluencetype=fluence
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 
 # GMS
-# Device was launched with M
-ro.product.first_api_level=23
+# Device was launched with N
+ro.product.first_api_level=24
 
 # GPS
 persist.gps.qc_nlp_in_use=1
