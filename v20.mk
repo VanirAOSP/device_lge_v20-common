@@ -26,6 +26,7 @@ PRODUCT_COPY_FILES += \
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2560
@@ -33,11 +34,11 @@ TARGET_SCREEN_WIDTH := 1440
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/mixer_paths_tasha.xml:system/etc/mixer_paths_tasha.xml
+    $(LOCAL_PATH)/audio/mixer_paths_tasha.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tasha.xml
 
-# IR
+# Fingerprint
 PRODUCT_PACKAGES += \
-    consumerir.msm8996
+    android.hardware.biometrics.fingerprint@2.1-service
 
 # Sensors
 PRODUCT_COPY_FILES += \
